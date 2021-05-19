@@ -72,7 +72,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void Heal(int amount)
+    internal void Heal(int amount)
     {
         int tempHealth = currentHealth + amount;
         if (tempHealth > 100)

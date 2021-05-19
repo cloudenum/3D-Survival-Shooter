@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class EnemyFactory : MonoBehaviour, IFactory
+public class ItemFactory : MonoBehaviour, IFactory
 {
     [SerializeField]
-    public GameObject[] enemyPrefab;
+    public GameObject[] itemPrefab;
     public Transform[] spawnPoints;
 
     public GameObject FactoryMethod(int tag)
@@ -14,7 +16,7 @@ public class EnemyFactory : MonoBehaviour, IFactory
 
     public GameObject FactoryMethod(int tag, int spawnPointIndex)
     {
-        GameObject enemy = Instantiate(enemyPrefab[tag], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
-        return enemy;
+        GameObject item = Instantiate(itemPrefab[tag], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+        return item;
     }
 }

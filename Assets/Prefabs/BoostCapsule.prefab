@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4735112830685750119}
   - component: {fileID: 4735112830685750112}
   - component: {fileID: 4735112830685750113}
+  - component: {fileID: 3657979035506052143}
   m_Layer: 0
   m_Name: BoostCapsule
   m_TagString: Boost
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4735112830685750114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.23, y: 0.52, z: 5.82}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 8250469628800132236}
@@ -93,6 +94,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3657979035506052143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4735112830685750114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cbc589d7e245604c96c3d3aa6d15ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boostAmount: 6
+  duration: 5
+  itemManager: {fileID: 0}
 --- !u!1 &5550556665125297932
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,8 +151,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.8867924, g: 0.62713635, b: 0.0292809, a: 1}
-  m_Intensity: 1
-  m_Range: 1.6477432
+  m_Intensity: 0.75
+  m_Range: 5.82
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:

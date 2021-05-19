@@ -9,6 +9,11 @@ public class PlayerMovement : MonoBehaviour
     int floorMask;
     float camRayLength = 100f;
 
+    private float time;
+    private float boostDuration;
+    bool boosted = false;
+    private float prevSpeed;
+
     private void Awake()
     {
         //mendapatkan nilai mask dari layer yang bernama Floor
@@ -23,6 +28,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (boosted)
+        {
+            time += Time.fixedDeltaTime;
+
+            if (time >= boostDuration)
+            {
+                time = 0;
+                boostDuration = 0;
+                speed = prevSpeed;
+                boosted = false;
+            }
+        }
+
         //Mendapatkan nilai input horizontal (-1,0,1)
         float h = Input.GetAxisRaw("Horizontal");
 
@@ -60,6 +78,17 @@ public class PlayerMovement : MonoBehaviour
 
             //Rotasi player
             playerRigidbody.MoveRotation(newRotation);
+        }
+    }
+
+    internal void Boost(float amount, float duration)
+    {
+        if (!boosted)
+        {
+            prevSpeed = speed;
+            boosted = true;
+            speed += amount;
+            boostDuration = duration;
         }
     }
 
